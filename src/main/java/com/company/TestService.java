@@ -15,7 +15,7 @@ public class TestService {
 
     @GET
     public String getTest(){
-        return "Hello World";
+        return "Yo Bro";
     }
 
     @Path("json")
