@@ -1,1 +1,1 @@
-web: java -jar target/ltion1.jar
+web: java -jar target/lektion1.jar
