@@ -8,10 +8,12 @@ import {Button} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import "./Stores/GiraffeStore"
 import {Route, Switch} from "react-router-dom";
 import {withRouter} from "react-router";
-
+import GiraffeStore from "./Stores/GiraffeStore";
+import {observer} from "mobx-react";
+const giraffeStore = new GiraffeStore();
 
 function App() {
   return (
@@ -53,6 +55,21 @@ function App() {
                     </InputGroup>
                 </Col>
             </Row>
+            <Row>
+                <Col>
+                    <Button onClick={()=>giraffeStore.giraffes.push("Elmer")}>Tilføj giraf</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <ul>
+                        {giraffeStore.giraffes.map((giraffeName,key)=>
+                            <li key={key}>{giraffeName}</li>
+                        )}
+                    </ul>
+
+                </Col>
+            </Row>
 
 
 
@@ -91,4 +108,4 @@ const About = withRouter((input) => {
     </div>
 });
 
-export default App;
+export default observer(App);
