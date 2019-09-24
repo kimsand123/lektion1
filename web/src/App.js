@@ -57,12 +57,15 @@ function App() {
             </Row>
             <Row>
                 <Col>
+                    <label id="statusLabel" >{giraffeStore.giraffes.stat}</label> <br></br>
                     <Button onClick={()=>giraffeStore.giraffes.push("Elmer")}>Tilføj giraf</Button>
+
                 </Col>
             </Row>
             <Row>
                 <Col>
                     <ul>
+
                         {giraffeStore.giraffes.map((giraffeName,key)=>
                             <li key={key}>{giraffeName}</li>
                         )}
