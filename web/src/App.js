@@ -57,7 +57,7 @@ function App() {
             </Row>
             <Row>
                 <Col>
-                    <label id="statusLabel" >{giraffeStore.giraffes.stat}</label> <br></br>
+                    <label id="statusLabel" >{giraffeStore.stat}</label> <br></br>
                     <Button onClick={()=>giraffeStore.giraffes.push("Elmer")}>Tilføj giraf</Button>
 
                 </Col>
