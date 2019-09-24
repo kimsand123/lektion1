@@ -4,7 +4,7 @@ const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:8080/
 
 export default class GiraffeStore {
     stat = "";
-    giraffes = ["Marius","Melman","tis","muh"];
+    giraffes = [""];
     constructor(props){
         this.getGiraffData();
         /*fetch(baseUrl + "rest/giraffes").then(

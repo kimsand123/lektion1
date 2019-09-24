@@ -11,7 +11,7 @@ import java.util.List;
 @Path("giraffes")
 
 public class GiraffeService {
-    List<String> giraffes = Arrays.asList("Melman","Elmer");
+    List<String> giraffes = Arrays.asList("Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer","Melman","Elmer");
     @GET
     public List<String> getGiraffes(){
         return giraffes;
