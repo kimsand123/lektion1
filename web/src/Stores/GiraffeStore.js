@@ -1,8 +1,9 @@
 import {decorate, observable} from "mobx";
+import axios from "axios";
 
 
 const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:8080/":""; // Check if dev environment
-const axios = require('axios');
+
 
 export default class GiraffeStore {
     stat = "";
