@@ -1,6 +1,8 @@
 import {decorate, observable} from "mobx";
 
+
 const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:8080/":""; // Check if dev environment
+const axios = require('axios');
 
 export default class GiraffeStore {
     stat = "";
@@ -13,14 +15,17 @@ export default class GiraffeStore {
             )
         )*/
     }
+
     async getGiraffData() {
+
+
         try {
             this.stat = "Loading giraffes";
-            let response = await fetch(baseUrl + "rest/giraffes");
-            let data = await response.json();
-            this.stat = "Done";
+            let response = await axios.get(baseUrl + 'rest/giraffes');
+            let data = response.data;
             this.giraffes = data;
-        } catch (err) {
+            this.stat = "Done";
+        } catch (error) {
             this.stat = "Failed at loading giraffes";
         }
     }
