@@ -17,15 +17,27 @@ export default class GiraffeStore {
         )*/
     }
 
+    async pushGiraffData(giraffname){
+        const querystring = require('querystring');
+        let globalResponse = "";
+        try{
+            this.stat ="saving Giraff";
+            let response = await axios.post(baseUrl + 'rest/giraffes',  giraffname);
+            this.stat = "Done saving Giraff";
+            globalResponse = response;
+            this.getGiraffData();
+        } catch (error){
+            this.stat = "Failed at storing giraff" + globalResponse;
+        }
+}
+
     async getGiraffData() {
-
-
         try {
             this.stat = "Loading giraffes";
             let response = await axios.get(baseUrl + 'rest/giraffes');
             let data = response.data;
             this.giraffes = data;
-            this.stat = "Done";
+            this.stat = "Don";
         } catch (error) {
             this.stat = "Failed at loading giraffes";
         }
