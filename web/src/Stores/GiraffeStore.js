@@ -5,8 +5,8 @@ import axios from "axios";
 const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:8080/":""; // Check if dev environment
 
 
-export default class GiraffeStore {
-    stat = "";
+class GiraffeStore {
+    stat = "Done";
     giraffes = [""];
     constructor(props){
         this.getGiraffData();
@@ -36,18 +36,18 @@ export default class GiraffeStore {
             this.stat = "Loading giraffes";
             let response = await axios.get(baseUrl + 'rest/giraffes');
             let data = response.data;
+            console.log(response);
             this.giraffes = data;
-            this.stat = "Don";
+            this.stat = "Done";
+            //console.log(data);
         } catch (error) {
             this.stat = "Failed at loading giraffes";
         }
     }
+
+
 }
-
-
-/*export default class GiraffeStore{
-    giraffes=["Marius","Melman"];
-}*/
+export default GiraffeStore;
 
 decorate(GiraffeStore,{
     giraffes: observable,

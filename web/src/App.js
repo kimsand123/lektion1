@@ -11,9 +11,11 @@ import Col from "react-bootstrap/Col";
 import "./Stores/GiraffeStore"
 import {Route, Switch} from "react-router-dom";
 import {withRouter} from "react-router";
-import GiraffeStore from "./Stores/GiraffeStore";
+//import {giraffeStore} from "./Stores/GiraffeStore";
 import {observer} from "mobx-react";
-const giraffeStore = new GiraffeStore();
+import GiraffeStore from "./Stores/GiraffeStore";
+let giraffeStore = new GiraffeStore();
+window.store = giraffeStore;
 
 function App() {
   return (
@@ -73,8 +75,6 @@ function App() {
 
                 </Col>
             </Row>
-
-
 
         <InputGroup className="mb-3">
             <InputGroup.Prepend>
